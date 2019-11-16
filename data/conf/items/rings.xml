@@ -233,4 +233,24 @@
 			<slot name="keyring"/>
 		</equipable>
 	</item>
+
+	<item name="pierścień ukrycia">
+		<type class="ring" subclass="stealth-ring" tileid="-1"/>
+		<description></description>
+		<implementation class-name="games.stendhal.server.entity.item.StealthRing"/>
+		<attributes>
+			<min_level value="150"/>
+			<undroppableondeath value="1"/>
+		</attributes>
+		<weight value="0.1"/>
+		<value value="1"/>
+		<equipable>
+			<slot name="ground"/>
+			<slot name="content"/>
+			<slot name="bag"/>
+			<slot name="finger"/>
+			<slot name="fingerb"/>
+			<slot name="keyring"/>
+		</equipable>
+	</item>
 </items>
