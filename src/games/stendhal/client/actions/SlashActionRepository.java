@@ -37,6 +37,7 @@ public class SlashActionRepository {
 		final GroupMessageAction groupMessage = new GroupMessageAction();
 
 		actions.put("/", new RemessageAction());
+		actions.put("achievements", new AchievementsAction());
 		actions.put("add", new AddBuddyAction());
 		actions.put("adminlevel", new AdminLevelAction());
 		actions.put("adminnote", new AdminNoteAction());

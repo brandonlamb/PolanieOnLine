@@ -213,6 +213,8 @@ class SettingsPanel extends JButton {
 		column.addComponent(item);
 		item = createMenuItem("Dziennik Zadań", "travellog");
 		column.addComponent(item);
+		item = createMenuItem("Osiągnięcia", "achievements");
+		column.addComponent(item);
 	}
 
 	/**

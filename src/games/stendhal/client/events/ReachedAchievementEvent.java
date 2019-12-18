@@ -18,7 +18,7 @@ import games.stendhal.client.entity.RPEntity;
  *
  * @author madmetzger
  */
-class ReachedAchievementEvent extends Event<RPEntity>{
+public class ReachedAchievementEvent extends Event<RPEntity>{
 	@Override
 	public void execute() {
 		String achievementTitle = event.get("title");
