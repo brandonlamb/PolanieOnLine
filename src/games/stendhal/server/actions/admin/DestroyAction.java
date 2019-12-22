@@ -13,6 +13,7 @@ package games.stendhal.server.actions.admin;
 
 import static games.stendhal.common.constants.Actions.NAME;
 import static games.stendhal.common.constants.Actions.TARGET;
+
 import games.stendhal.server.actions.CommandCenter;
 import games.stendhal.server.core.engine.GameEvent;
 import games.stendhal.server.core.engine.ItemLogger;
@@ -25,10 +26,10 @@ import games.stendhal.server.entity.RPEntity;
 import games.stendhal.server.entity.creature.Creature;
 import games.stendhal.server.entity.item.Corpse;
 import games.stendhal.server.entity.item.Item;
+import games.stendhal.server.entity.item.SlotActivatedItem;
 import games.stendhal.server.entity.mapstuff.portal.Portal;
 import games.stendhal.server.entity.mapstuff.spawner.FlowerGrower;
 import games.stendhal.server.entity.npc.PassiveNPC;
-import games.stendhal.server.entity.npc.SpeakerNPC;
 import games.stendhal.server.entity.player.Player;
 import marauroa.common.game.RPAction;
 import marauroa.common.game.RPObject;
@@ -75,6 +76,11 @@ class DestroyAction extends AdministrationAction {
 				new ItemLogger().destroy(player, inspected.getContainerSlot(), inspected, "admin");
 			}
 
+			// disable effects of slot activated items
+			if (inspected instanceof SlotActivatedItem) {
+				((SlotActivatedItem) inspected).onUnequipped();
+			}
+
 			String slotname = inspected.getContainerSlot().getName();
 			int objectID = inspected.getID().getObjectID();
 			if (null != inspected.getContainerSlot().remove(inspected.getID())) {
@@ -84,16 +90,15 @@ class DestroyAction extends AdministrationAction {
 				player.sendPrivateText("Usunięto zawartość " + clazz + " " + name + " o ID " + objectID + " ze slota " + slotname);
 			} else {
 				player.sendPrivateText("Nie można było usunąć zawartości " + clazz + " " + inspected + " o ID " + objectID + " ze slota " + slotname);
+
+				// re-enable effects of slot activated item in case removal failed
+				if (inspected instanceof SlotActivatedItem) {
+					((SlotActivatedItem) inspected).onEquipped(player, slotname);
+				}
 			}
 		} else {
 			if (inspected instanceof Player) {
 				final String text = "Nie możesz usuwać wojowników";
-				player.sendPrivateText(text);
-				return;
-			}
-
-			if (inspected instanceof SpeakerNPC) {
-				final String text = "Nie możesz usuwać SpeakerNPCów";
 				player.sendPrivateText(text);
 				return;
 			}

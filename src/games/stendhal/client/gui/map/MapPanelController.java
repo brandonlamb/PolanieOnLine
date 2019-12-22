@@ -28,6 +28,7 @@ import games.stendhal.client.entity.EntityChangeListener;
 import games.stendhal.client.entity.FlyOverArea;
 import games.stendhal.client.entity.HousePortal;
 import games.stendhal.client.entity.IEntity;
+import games.stendhal.client.entity.NPC;
 import games.stendhal.client.entity.Player;
 import games.stendhal.client.entity.Portal;
 import games.stendhal.client.entity.RPEntity;
@@ -105,6 +106,8 @@ public class MapPanelController implements GameObjects.GameObjectListener, Posit
 
 		if (entity instanceof Player) {
 			object = new PlayerMapObject(entity);
+		} else if (entity instanceof NPC) {
+			object = new NPCMapObject(entity);
 		} else if (entity instanceof Portal) {
 			final Portal portal = (Portal) entity;
 

@@ -1,18 +1,67 @@
 Changelog
 ---------
-1.06.1
+1.08
 *klient*
-- Dokonano kolejnych zmian w wyglądach postaci
+- Dodano muzykę w tle w mieście Fado
+- Rozbudowano nową funkcję rysowania cieni pod obiektami
 
 *świat*
+- Przystosowano niektóre mapy zakopanego do Xmas
+- Zbalansowano mnożnik ilości punktów defensywnych z setów
+- McPegleg skupuje teraz spodnie lazurowe
+- Dodano więcej możliwości zdobycia przedmiotu: 'środek uspokajający'
+- Dodano respy nowych potworów (z poprzedniej aktualizacji 1.07): gryf oraz harpia - 0_gdansk_forest_s2_w, legendarny żywioł lodu: 0_ados_rock
+- Dodano prawie cały nowy set przedmiotów (set królewski)
+
+*naprawiono błędy*
+- Naprawiono znacznik oznaczający, że zadanie można powtórzyć dla: 'Gra w zgadywanie' & 'Znajdź Szczurze Dzieci'
+- NPC'ty, którzy odwracają się podczas kolizji, teraz zatrzymują się, jeżeli nie będą mieli dokąd pójść
+
+
+1.07.1
+Wersja poprawiająca działanie systemu limitów u burmistrzów następująco:
+	zamiast niedawania punktów umiejętności za osiągnięcie danego poziomu ataku, to każdy osobno skill, który osiągnie dany limit (atak - 110; obr - 140; str - 90),
+	zostanie nałożone ograniczenie, które zmniejszy o 75% możliwych punktów do zdobycia.
+	Przykładowo:
+		Osiągneliśmy obrone na poziomie 140 to każda kolejna misja u burmistrza ograniczy ilość możliwych do zdobycia punktów dla tej umiejętności o 75%,
+		natomiast reszta będzie miała normalny przelicznik dopóki nie osiągnięmy wcześniej wyznaczonego limitu.
+
+*klient*
+- Dodano kilka nowo-odświeżonych grafik
+
+*naprawiono błędy*
+- Naprawiono mapę -1_semos_caves
+
+
+1.07
+*klient*
+- Dodano widoczność NPC'tów na minimapie
+- Dokonano kolejnych zmian w wyglądach postaci
+- Odświeżono kolory pióra azazela oraz archanioła ciemności
+- Zmieniono wygląd pasów takich jak:
+	* karmazynowy pas,
+	* pas elficki,
+	* pas krasnoludzki,
+	* pas wampirzy oraz
+	* złoty pas
+- Zmieniono wygląd wszystkich kanibali
+- Ogromna ilość poprawek w wyglądach NPC
+- Oraz różne mniejsze poprawki przedmiotów i nie tylko...
+
+*świat*
+- Dodano 3 nowe potwory: legendarny żywioł lodu, gryf oraz harpia
+- Dodano 4 nowe przedmioty: rękawice chaosu, rękawice mainiocyjskie, rękawice xenocyjskie oraz pas cieni
+- Dodano możliwość zdobycia zaklęcia pustelnika w grze
 - Joachim (rynek w Gdańsku) skupuje ryby ze świata POL
 - Można sprzedać skrzydlice na rynku w Kirdneh za 120 money
 - Po wyborze ciała kawalerzysty (w zmianach swojego wyglądu), automatycznie zostanie nam zdjęta reszta ubrań
+- Zwiększono szansę na zdobycie setu zabójcy z samuraja
 
 *naprawiono błędy*
 - Naprawiono ścieżki graficzne do wszystkich odmian mermaid
 - Naprawiono wyświetlanie wcześniej zebranych klejnotów w dzienniku zadań
-- Poprawiono grafikę przedmiotu "zielone jabłuszko"
+- Poprawiono grafikę przedmiotu "zielone jabłuszko" oraz kolory wampirzych rękawic
+- Poprawiono opis lodowych rękawic
 - Koniczynki stackują się ze sobą (dopiero po automatycznemu podpisaniu przedmiotu)
 
 

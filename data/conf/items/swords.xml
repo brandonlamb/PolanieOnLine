@@ -502,7 +502,7 @@
 	</item>
 
 	<item name="mieczyk">
-		<type class="sword" subclass="knife" tileid="-1"/>
+		<type class="sword" subclass="wooden_sword" tileid="-1"/>
 		<description>Oto tępy mieczyk, który zadaje małe obrażenia.</description>
 		<implementation class-name="games.stendhal.server.entity.item.Item"/>
 		<attributes>
@@ -663,6 +663,29 @@
 		<equipable>
 			<slot name="ground"/>
 			<slot name="content"/>
+			<slot name="rhand"/>
+			<slot name="bag"/>
+			<slot name="trade"/>
+		</equipable>
+	</item>
+
+	<item name="królewski sztylet">
+		<type class="sword" subclass="royal_dagger" tileid="-1"/>
+		<description>Oto rzadki i cenny królewski sztylet. Może kraść życie tym, którym go dźgasz.</description>
+		<implementation class-name="games.stendhal.server.entity.item.Item"/>
+		<attributes>
+			<atk value="5"/>
+			<rate value="1"/>
+			<lifesteal value="0.1"/>
+			<min_level value="200"/>
+		</attributes>
+		<weight value="0.2"/>
+		<value value="1000000"/>
+		<damage type="dark"/>
+		<equipable>
+			<slot name="ground"/>
+			<slot name="content"/>
+			<slot name="lhand"/>
 			<slot name="rhand"/>
 			<slot name="bag"/>
 			<slot name="trade"/>
